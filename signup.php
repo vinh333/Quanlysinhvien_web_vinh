@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SIGN UP</title>
+	<title>ĐĂNG KÝ</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
      <form action="signup-check.php" method="post">
-     	<h2>SIGN UP</h2>
+     	<h2>ĐĂNG KÝ</h2>
      	<?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
      	<?php } ?>
@@ -15,43 +15,43 @@
                <p class="success"><?php echo $_GET['success']; ?></p>
           <?php } ?>
 
-          <label>Name</label>
+          <label>Tên</label>
           <?php if (isset($_GET['name'])) { ?>
                <input type="text" 
                       name="name" 
-                      placeholder="Name"
+                      placeholder="Tên"
                       value="<?php echo $_GET['name']; ?>"><br>
-          <?php }else{ ?>
+          <?php } else { ?>
                <input type="text" 
                       name="name" 
-                      placeholder="Name"><br>
-          <?php }?>
+                      placeholder="Tên"><br>
+          <?php } ?>
 
-          <label>User Name</label>
+          <label>Tên người dùng</label>
           <?php if (isset($_GET['uname'])) { ?>
                <input type="text" 
                       name="uname" 
-                      placeholder="User Name"
+                      placeholder="Tên người dùng"
                       value="<?php echo $_GET['uname']; ?>"><br>
-          <?php }else{ ?>
+          <?php } else { ?>
                <input type="text" 
                       name="uname" 
-                      placeholder="User Name"><br>
-          <?php }?>
+                      placeholder="Tên người dùng"><br>
+          <?php } ?>
 
 
-     	<label>Password</label>
+     	<label>Mật khẩu</label>
      	<input type="password" 
                  name="password" 
-                 placeholder="Password"><br>
+                 placeholder="Mật khẩu"><br>
 
-          <label>Re Password</label>
+          <label>Nhập lại mật khẩu</label>
           <input type="password" 
                  name="re_password" 
-                 placeholder="Re_Password"><br>
+                 placeholder="Nhập lại mật khẩu"><br>
 
-     	<button type="submit">Sign Up</button>
-          <a href="index.php" class="ca">Already have an account?</a>
+     	<button type="submit">Đăng ký</button>
+          <a href="index.php" class="ca">Đã có tài khoản?</a>
      </form>
 </body>
 </html>

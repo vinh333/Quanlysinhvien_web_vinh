@@ -15,16 +15,15 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	$pass = validate($_POST['password']);
 
 	if (empty($uname)) {
-		header("Location: index.php?error=User Name is required");
+		header("Location: index.php?error=Tên người dùng là bắt buộc");
 	    exit();
-	}else if(empty($pass)){
-        header("Location: index.php?error=Password is required");
+	} else if (empty($pass)) {
+        header("Location: index.php?error=Mật khẩu là bắt buộc");
 	    exit();
-	}else{
-		// hashing the password
+	} else {
+		// Mã hóa mật khẩu
         $pass = md5($pass);
 
-        
 		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
 
 		$result = mysqli_query($conn, $sql);
@@ -37,17 +36,17 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['id'] = $row['id'];
             	header("Location: home.php");
 		        exit();
-            }else{
-				header("Location: index.php?error=Incorect User name or password");
+            } else {
+				header("Location: index.php?error=Tên người dùng hoặc mật khẩu không đúng");
 		        exit();
 			}
-		}else{
-			header("Location: index.php?error=Incorect User name or password");
+		} else {
+			header("Location: index.php?error=Tên người dùng hoặc mật khẩu không đúng");
 	        exit();
 		}
 	}
 	
-}else{
+} else {
 	header("Location: index.php");
 	exit();
 }
